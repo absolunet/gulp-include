@@ -3,6 +3,7 @@
 
 >Makes inclusion of files a breeze.
 Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools.
+(Extends gulp-include with custom rendering of inclusion)
 
 > Made for gulp 3
 
