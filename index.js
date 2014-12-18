@@ -98,7 +98,16 @@ function expand(fileContents, filePath) {
 				// jsrender template loading
 				if (directiveType.indexOf('jshtml') !== -1) {
 					var component = path.dirname(fileName).split(path.sep).slice(-2,-1);
-					var name = ( component + '_' + path.basename(fileName,'.'+EXTENSION.jshtml) ).replace('-','_').toLowerCase();
+					var name = ( component + '_' + path.basename(fileName,'.'+EXTENSION.jshtml) ).replace(/-/g, '_').toLowerCase();
+
+					// camel case the resulting name
+					var camelCase = name.split('_');
+					for (c = 0; c < camelCase.length; c++) {
+						if (c !== 0) {
+							camelCase[c] = camelCase[c].charAt(0).toUpperCase() + camelCase[c].substring(1);
+						}
+					}
+					name = camelCase.join('');
 
 					 // cleanup from https://github.com/alanshaw/grunt-template-client
 					newMatchText = newMatchText.replace(/^\s+|\s+$|[\r\n]+/gm, '').replace(/'/g, "\\'");
