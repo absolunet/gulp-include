@@ -1,5 +1,8 @@
 # gulp-nwayo-include changelog
 
+## 0.2.1 (2014-12-18)
+- Camelcase for the jshtml template names to respect the new jshint rules in nwayo3
+
 ## 0.2.0 (2014-11-24)
 - Get all of gulp-include back into this repo
 
