@@ -97,7 +97,9 @@ function expand(fileContents, filePath) {
 
 				// jsrender template loading
 				if (directiveType.indexOf('jshtml') !== -1) {
-					var component = path.dirname(fileName).split(path.sep).slice(-2,-1);
+					var pathDirName = path.dirname(fileName);
+					var pathSeparator = pathDirName.indexOf(path.sep) !== -1;
+					var component = pathDirName.split(pathSeparator ? path.sep : '/').slice(-2,-1);
 					var name = ( component + '_' + path.basename(fileName,'.'+EXTENSION.jshtml) ).replace(/-/g, '_').toLowerCase();
 
 					// camel case the resulting name
