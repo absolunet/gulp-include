@@ -1,6 +1,6 @@
 {
   "name":        "gulp-nwayo-include",
-  "version":     "0.2.2",
+  "version":     "0.2.1",
   "description": "Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools. (Extends gulp-include with custom rendering of inclusion)",
   "homepage":    "http://absolunet.github.io/gulp-nwayo-include",
   "author":      { "name": "Absolunet", "url": "http://absolunet.com/" },
