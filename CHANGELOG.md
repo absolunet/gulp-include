@@ -1,5 +1,8 @@
 # gulp-nwayo-include changelog
 
+## 0.2.2 (2015-02-25)
+- JSHint parsing : Fallback path separator when `path.sep` cannot be found.
+
 ## 0.2.1 (2014-12-18)
 - Camelcase for the jshtml template names to respect the new jshint rules in nwayo3
 
