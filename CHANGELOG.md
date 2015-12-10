@@ -1,5 +1,10 @@
 # gulp-nwayo-include changelog
 
+## 0.3.0 (2015-12-10)
+- ADD: partialPrefix option: Tries to find an underscore-prefixed file (SASS style)
+- ADD: fileProcess option: Provides a callback after reading a file to process it
+- FIX: Throws an error when a file is not found
+
 ## 0.2.2 (2015-02-25)
 - JSHint parsing : Fallback path separator when `path.sep` cannot be found.
 

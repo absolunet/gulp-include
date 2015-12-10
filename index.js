@@ -15,7 +15,9 @@ var EXTENSION = {
 var requiredFiles = {},
 	extensions = [],
 	basePath = '',
-	autoExtension = '';
+	autoExtension = '',
+	partialPrefix = '',
+	fileProcess = '';
 
 module.exports = function (params) {
 	params = params || {};
@@ -23,6 +25,8 @@ module.exports = function (params) {
 	extensions = [];
 	basePath = '';
 	autoExtension = '';
+	partialPrefix = '';
+	fileProcess = '';
 
 	if (params.extensions) {
 		extensions = typeof params.extensions === 'string' ? [params.extensions] : params.extensions;
@@ -32,6 +36,12 @@ module.exports = function (params) {
 	}
 	if (params.autoExtension) {
 		autoExtension = typeof params.autoExtension === 'boolean' ? params.autoExtension : false;
+	}
+	if (params.partialPrefix) {
+		partialPrefix = typeof params.partialPrefix === 'boolean' ? params.partialPrefix : false;
+	}
+	if (params.fileProcess) {
+		fileProcess = typeof params.fileProcess === 'function' ? params.fileProcess : undefined;
 	}
 
 	function include(file, callback) {
@@ -93,7 +103,18 @@ function expand(fileContents, filePath) {
 			if ((directiveType.indexOf('require') !== -1 || directiveType.indexOf('jshtml') !== -1) && requiredFiles[fileName]) {
 				newMatchText = comment + ' [gulp-nwayo-include] -- Skipping ' + originalFilename + ', already included.';
 			} else {
-				newMatchText = expand(String(fs.readFileSync(fileName)), fileName);
+
+				var fileContent = String(fs.readFileSync(fileName));
+
+				if (fileProcess) {
+					fileContent = fileProcess({
+						fullPath: fileName,
+						rawPath: fileName.substr(basePath.length),
+						content: fileContent
+					});
+				}
+
+				newMatchText = expand(fileContent, fileName);
 
 				// jsrender template loading
 				if (directiveType.indexOf('jshtml') !== -1) {
@@ -117,8 +138,6 @@ function expand(fileContents, filePath) {
 					// write directive
 					newMatchText = 'app.tmpl.' + name + ' = $.templates(\''+ name +'\', \'' + newMatchText + '\');';
 				}
-
-
 			}
 
 		   //Try to retain the same indent level from the original include line
@@ -215,6 +234,28 @@ function _internalGlob(thisGlob, filePath, directiveType) {
 		mark: true
 	});
 
+	if (!files.length) {
+
+		// Try a partial prefix
+		if (partialPrefix) {
+			var elements = fullPath.split('/');
+			elements[elements.length-1] = '_'+elements[elements.length-1];
+			var fullPath2 = elements.join('/');
+
+			files = glob.sync(fullPath2, {
+				mark: true
+			});
+
+			if (!files.length) {
+				throw new gutil.PluginError('gulp-nwayo-include', 'File \''+fullPath+'\' not found');
+			}
+
+		} else {
+			throw new gutil.PluginError('gulp-nwayo-include', 'File \''+fullPath+'\' not found');
+		}
+	}
+
+
 	files = files.filter(function (fileName) {
 		var slashSplit = fileName.split(/[\\\/]/),
 			thisExtension = fileName.split('.').pop();
@@ -274,3 +315,4 @@ function difference(arr1, arr2) {
 	}
 	return arr1;
 }
+

@@ -126,6 +126,12 @@ app.tmpl.cart_list1.render();
 * `autoExtension` (optional)
 	* Takes a `Boolean`
 	* If set, all inclusions will automatically have the current file extension added to them
+* `partialPrefix` (optional)
+	* Takes a `Boolean`
+	* If set, all inclusions will be tried with an underscore-prefixed filename (SASS style)
+* `fileProcess` (optional)
+	* Takes a `Function`
+	* If set, will be called back with the file content to be processed an returned
 
 
 ## Documentation
