@@ -1,5 +1,8 @@
 # gulp-nwayo-include changelog
 
+## 0.3.1 (2016-03-16)
+- FIX: partialPrefix works on Windows
+
 ## 0.3.0 (2015-12-10)
 - ADD: partialPrefix option: Tries to find an underscore-prefixed file (SASS style)
 - ADD: fileProcess option: Provides a callback after reading a file to process it
