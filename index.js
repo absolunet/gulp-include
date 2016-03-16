@@ -238,9 +238,10 @@ function _internalGlob(thisGlob, filePath, directiveType) {
 
 		// Try a partial prefix
 		if (partialPrefix) {
-			var elements = fullPath.split('/');
+			var pathSeparator = (fullPath.indexOf(path.sep) !== -1) ? path.sep : '/';
+			var elements = fullPath.split(pathSeparator);
 			elements[elements.length-1] = '_'+elements[elements.length-1];
-			var fullPath2 = elements.join('/');
+			var fullPath2 = elements.join(pathSeparator);
 
 			files = glob.sync(fullPath2, {
 				mark: true
