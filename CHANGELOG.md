@@ -1,5 +1,8 @@
 # gulp-nwayo-include changelog
 
+## 0.3.2 (2016-05-11)
+- FIX: Normalize line endings
+
 ## 0.3.1 (2016-03-16)
 - FIX: partialPrefix works on Windows
 
