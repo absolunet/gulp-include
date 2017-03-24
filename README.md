@@ -1,9 +1,9 @@
 # @absolunet/gulp-include
 
-[![NPM version](https://img.shields.io/npm/v/@absolunet/gulp-includes.svg)](https://www.npmjs.com/package/@absolunet/gulp-includes)
-[![Travis build](https://api.travis-ci.org/absolunet/gulp-includes.svg?branch=master)](https://travis-ci.org/absolunet/gulp-includes/builds)
-[![Dependencies](https://david-dm.org/absolunet/gulp-includes/status.svg)](https://david-dm.org/absolunet/gulp-includes)
-[![Dev dependencies](https://david-dm.org/absolunet/gulp-includes/dev-status.svg)](https://david-dm.org/absolunet/gulp-includes?type=dev)
+[![NPM version](https://img.shields.io/npm/v/@absolunet/gulp-include.svg)](https://www.npmjs.com/package/@absolunet/gulp-include)
+[![Travis build](https://api.travis-ci.org/absolunet/gulp-include.svg?branch=master)](https://travis-ci.org/absolunet/gulp-include/builds)
+[![Dependencies](https://david-dm.org/absolunet/gulp-include/status.svg)](https://david-dm.org/absolunet/gulp-include)
+[![Dev dependencies](https://david-dm.org/absolunet/gulp-include/dev-status.svg)](https://david-dm.org/absolunet/gulp-include?type=dev)
 
 >Makes inclusion of files a breeze.
 Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools.
