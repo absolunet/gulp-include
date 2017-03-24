@@ -1,46 +1,32 @@
-{
-  "name": "gulp-nwayo-include",
-  "version": "0.3.2",
-  "description": "Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools. (Extends gulp-include with custom rendering of inclusion)",
-  "homepage": "http://absolunet.github.io/gulp-nwayo-include",
-  "author": {
-    "name": "Absolunet",
-    "url": "http://absolunet.com/"
-  },
-  "contributors": [
-    {
-      "name": "Hugo Wiledal"
-    }
-  ],
-  "repository": {
-    "url": "git://github.com/absolunet/gulp-nwayo-include.git",
-    "type": "git"
-  },
-  "bugs": {
-    "url": "https://github.com/absolunet/gulp-nwayo-include/issues"
-  },
-  "license": "MIT",
-  "keywords": [
-    "gulpplugin",
-    "gulpinclude",
-    "nwayo"
-  ],
-  "main": "index.js",
+ {
+  "name":         "@absolunet/gulp-include",
+  "version":      "0.4.0",
+  "description":  "Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools. (Extends gulp-include with custom rendering of inclusion)",
+  "definition":   "",
+  "keywords":     [ "gulpplugin", "gulpinclude", "nwayo" ],
+  "homepage":     "https://github.com/absolunet/gulp-include",
+  "author":       { "name": "Absolunet", "url": "http://absolunet.com/" },
+  "contributors": { "name": "Hugo Wiledal" },
+
+  "license":    "MIT",
+  "repository": { "url":   "git://github.com/absolunet/gulp-include.git", "type":"git" },
+  "bugs":       { "url": "https://github.com/absolunet/gulp-include/issues" },
+
+  "engines": { "node": ">= 7.7.3" },
   "scripts": {
     "test": "mocha"
   },
-  "engines": {
-    "node": ">= 6.0.0"
-  },
+
   "devDependencies": {
-    "gulp": "3.9.1",
-    "mocha": "2.4.5",
-    "should": "8.3.1"
-  },
+    "gulp":   "3.9.1",
+    "mocha":  "3.2.0",
+    "should": "11.2.1"
+ },
+
   "dependencies": {
-    "event-stream": "3.3.2",
-    "glob": "7.0.3",
-    "gulp-util": "3.0.7",
-    "lodash": "4.6.1"
+    "event-stream": "3.3.4",
+    "glob":         "7.1.1",
+    "gulp-util":    "3.0.8",
+    "lodash":       "4.17.4"
   }
 }

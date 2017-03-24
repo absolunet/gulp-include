@@ -6,7 +6,7 @@ var gutil = require("gulp-util"),
 
 
 // TEST DESCRIPTIONS
-describe("gulp-nwayo-include", function () {
+describe("gulp-include", function () {
 
     describe("directive matching", function () {
         // Load the module indirectly, so that we can access

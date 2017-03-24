@@ -1,5 +1,9 @@
-#gulp-nwayo-include [![NPM version][npm-image]][npm-url]
-[![Travis build][travis-image]][travis-url] [![Dependencies][david-dep-image]][david-dep-url] [![Dev dependencies][david-devdep-image]][david-devdep-url]
+# @absolunet/gulp-include
+
+[![NPM version](https://img.shields.io/npm/v/@absolunet/gulp-includes.svg)](https://www.npmjs.com/package/@absolunet/gulp-includes)
+[![Travis build](https://api.travis-ci.org/absolunet/gulp-includes.svg?branch=master)](https://travis-ci.org/absolunet/gulp-includes/builds)
+[![Dependencies](https://david-dm.org/absolunet/gulp-includes/status.svg)](https://david-dm.org/absolunet/gulp-includes)
+[![Dev dependencies](https://david-dm.org/absolunet/gulp-includes/dev-status.svg)](https://david-dm.org/absolunet/gulp-includes?type=dev)
 
 >Makes inclusion of files a breeze.
 Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools.
@@ -9,8 +13,8 @@ Enables functionality similar to that of snockets / sprockets or other file inse
 
 
 ## Usage
-First, install `gulp-nwayo-include` as a dev dependency:
-`npm install --save-dev gulp-nwayo-include`
+First, install `gulp-include` as a dev dependency:
+`npm install --save-dev @absolunet/gulp-include`
 
 Then, add your _include-comments_ to your file.
 _People who have experience with `sprockets` or `snockets` will feel at home._
@@ -38,7 +42,7 @@ You can do all of this in any language, the only requirement is that the first c
 ```coffeescript
 #= require_tree relative/path/to/directory
 ```
-`gulp-nwayo-include` disregards whitespace, as long as the comment-line starts with a _newline_ followed `=` and contains `include`, `require` or `include_tree`, `require_tree`.
+`gulp-include` disregards whitespace, as long as the comment-line starts with a _newline_ followed `=` and contains `include`, `require` or `include_tree`, `require_tree`.
 
 This plugin recursively expand files it includes, so you can nest includes inside of files that
     were themselves included. IE:
@@ -79,7 +83,7 @@ window.main = new Main()
 
 ```javascript
 var gulp		= require('gulp'),
-	include		= require('gulp-nwayo-include'),
+	include		= require('@absolunet/gulp-include'),
 	coffee		= require('gulp-coffee');
 
 gulp.task("scripts", function() {
@@ -139,23 +143,6 @@ Visit the [http://absolunet.github.io/nwayo](http://absolunet.github.io/nwayo) w
 
 ## Release history
 Forked from gulp-include [v1.1.0](https://github.com/wiledal/gulp-include/commit/c1e06c2c6ba76af9f00548675b817719a90a9f86)
-See the [CHANGELOG](https://github.com/absolunet/gulp-nwayo-include/blob/master/CHANGELOG.md).
 
 ## License
-See the [LICENSE](https://github.com/absolunet/gulp-nwayo-include/blob/master/LICENSE.md).
-
-
-
-
-[travis-url]: https://travis-ci.org/absolunet/gulp-nwayo-include/builds
-[travis-image]: http://img.shields.io/travis/absolunet/gulp-nwayo-include.svg?style=flat
-
-[david-dep-url]: https://david-dm.org/absolunet/gulp-nwayo-include
-[david-dep-image]: http://img.shields.io/david/absolunet/gulp-nwayo-include.svg?style=flat
-
-[david-devdep-url]: https://david-dm.org/absolunet/gulp-nwayo-include
-[david-devdep-image]: http://img.shields.io/david/dev/absolunet/gulp-nwayo-include.svg?style=flat
-
-[npm-url]: https://npmjs.org/package/gulp-nwayo-include
-[npm-image]: http://img.shields.io/npm/v/gulp-nwayo-include.svg?style=flat
-
+See the [license](https://github.com/absolunet/gulp-include/blob/master/license).

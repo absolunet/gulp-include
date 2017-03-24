@@ -50,7 +50,7 @@ module.exports = function (params) {
 		}
 
 		if (file.isStream()) {
-			throw new gutil.PluginError('gulp-nwayo-include', 'stream not supported');
+			throw new gutil.PluginError('gulp-include', 'stream not supported');
 		}
 
 		if (file.isBuffer()) {
@@ -101,7 +101,7 @@ function expand(fileContents, filePath) {
 			fileName = files[j];
 
 			if ((directiveType.indexOf('require') !== -1 || directiveType.indexOf('jshtml') !== -1) && requiredFiles[fileName]) {
-				newMatchText = comment + ' [gulp-nwayo-include] -- Skipping ' + originalFilename + ', already included.';
+				newMatchText = comment + ' [gulp-include] -- Skipping ' + originalFilename + ', already included.';
 			} else {
 
 				var fileContent = String(fs.readFileSync(fileName));
@@ -248,11 +248,11 @@ function _internalGlob(thisGlob, filePath, directiveType) {
 			});
 
 			if (!files.length) {
-				throw new gutil.PluginError('gulp-nwayo-include', 'File \''+fullPath+'\' not found');
+				throw new gutil.PluginError('gulp-include', 'File \''+fullPath+'\' not found');
 			}
 
 		} else {
-			throw new gutil.PluginError('gulp-nwayo-include', 'File \''+fullPath+'\' not found');
+			throw new gutil.PluginError('gulp-include', 'File \''+fullPath+'\' not found');
 		}
 	}
 
