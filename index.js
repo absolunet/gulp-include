@@ -292,7 +292,16 @@ module.exports = function (params) {
 		extensions = typeof params.extensions === 'string' ? [params.extensions] : params.extensions;
 	}
 	if (params.basePath) {
-		basePath = typeof params.basePath === 'string' ? path.normalize(process.cwd() + path.sep + params.basePath) : '';
+
+		if (typeof params.basePath === 'string') {
+			if (params.basePath.substring(0, 1) === '/') {
+				basePath = path.normalize(params.basePath);
+			} else {
+				basePath = path.normalize(process.cwd() + path.sep + params.basePath);
+			}
+		} else {
+			basePath = '';
+		}
 	}
 	if (params.autoExtension) {
 		autoExtension = typeof params.autoExtension === 'boolean' ? params.autoExtension : false;
