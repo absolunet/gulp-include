@@ -1,6 +1,6 @@
 {
   "name": "@absolunet/gulp-include",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools. (Extends gulp-include with custom rendering of inclusion)",
   "definition": "",
   "keywords": [
