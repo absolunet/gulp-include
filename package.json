@@ -1,32 +1,44 @@
- {
-  "name":         "@absolunet/gulp-include",
-  "version":      "0.5.0",
-  "description":  "Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools. (Extends gulp-include with custom rendering of inclusion)",
-  "definition":   "",
-  "keywords":     [ "gulpplugin", "gulpinclude", "nwayo" ],
-  "homepage":     "https://github.com/absolunet/gulp-include",
-  "author":       { "name": "Absolunet", "url": "http://absolunet.com/" },
-  "contributors": { "name": "Hugo Wiledal" },
-
-  "license":    "MIT",
-  "repository": { "url":   "git://github.com/absolunet/gulp-include.git", "type":"git" },
-  "bugs":       { "url": "https://github.com/absolunet/gulp-include/issues" },
-
-  "engines": { "node": ">= 8.1.4" },
+{
+  "name": "@absolunet/gulp-include",
+  "version": "0.5.0",
+  "description": "Enables functionality similar to that of snockets / sprockets or other file insertion compilation tools. (Extends gulp-include with custom rendering of inclusion)",
+  "definition": "",
+  "keywords": [
+    "gulpplugin",
+    "gulpinclude",
+    "nwayo"
+  ],
+  "homepage": "https://github.com/absolunet/gulp-include",
+  "author": {
+    "name": "Absolunet",
+    "url": "http://absolunet.com/"
+  },
+  "contributors": {
+    "name": "Hugo Wiledal"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "git://github.com/absolunet/gulp-include.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/absolunet/gulp-include/issues"
+  },
+  "engines": {
+    "node": ">= 8.4.0"
+  },
   "scripts": {
     "test": "mocha"
   },
-
   "devDependencies": {
-    "gulp":   "3.9.1",
-    "mocha":  "3.2.0",
-    "should": "11.2.1"
- },
-
+    "gulp": "^3.9.1",
+    "mocha": "^3.2.0",
+    "should": "^12.0.0"
+  },
   "dependencies": {
-    "event-stream": "3.3.4",
-    "glob":         "7.1.1",
-    "gulp-util":    "3.0.8",
-    "lodash":       "4.17.4"
+    "event-stream": "^3.3.4",
+    "glob": "^7.1.2",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4"
   }
 }

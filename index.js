@@ -294,7 +294,7 @@ module.exports = function (params) {
 	if (params.basePath) {
 
 		if (typeof params.basePath === 'string') {
-			if (params.basePath.substring(0, 1) === '/') {
+			if (path.isAbsolute(params.basePath)) {
 				basePath = path.normalize(params.basePath);
 			} else {
 				basePath = path.normalize(process.cwd() + path.sep + params.basePath);
